@@ -970,6 +970,20 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
   backdrop-filter:blur(3px);
 }
 
+.hero-content-button-only{
+  width:100%;
+  max-width:none;
+  padding:0 20px 28px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  text-align:center;
+}
+
+.hero-content-button-only .hero-book-btn{
+  min-width:148px;
+}
+
 /* ===== Live booking gate / submit ===== */
 .booking-auth-notice{
   max-width:660px;
@@ -1206,6 +1220,10 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
 @media(min-width:760px){
   .hero-content-minimal{
     padding-bottom:86px;
+  }
+
+  .hero-content-button-only{
+    padding:0 24px 34px;
   }
 
   .hero-content-minimal h1{
