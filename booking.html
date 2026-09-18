@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#2d1536">
   <title>Booking Request | Shot by Spaceboi</title>
   <meta name="description" content="Shot by Spaceboi photography">
-  <link rel="stylesheet" href="spaceboi-v3.css?v=brand3">
+  <link rel="stylesheet" href="spaceboi-v5.css?v=client-bookings">
 </head>
 <body class="">
 
@@ -62,10 +62,17 @@
   </section>
 
   <section class="section ivory">
+    <div class="booking-auth-notice hidden" id="bookingAuthNotice">
+      <p class="eyebrow">ACCOUNT REQUIRED</p>
+      <h2>Sign in before booking.</h2>
+      <p>Your account keeps your requests, invoices and photo links in one place.</p>
+      <a class="gold-btn" id="bookingLoginLink" href="login.html">SIGN IN / CREATE ACCOUNT</a>
+    </div>
+
     <form class="booking-form" id="bookingForm">
       <div class="two-col">
-        <label>Preferred date<input type="date" required></label>
-        <label>Preferred time<input type="time" required></label>
+        <label>Preferred date<input id="preferredDate" type="date" required></label>
+        <label>Preferred time<input id="preferredTime" type="time" required></label>
       </div>
 
       <div class="choice-row">
@@ -78,25 +85,26 @@
       <label>Inspiration photos <small>(optional, up to 4)</small><input type="file" id="inspoPhotos" accept="image/*" multiple></label>
 
       <div class="two-col">
-        <label>Full name<input type="text" required></label>
-        <label>Phone / WhatsApp<input type="tel" required></label>
+        <label>Full name<input id="bookingFullName" type="text" required></label>
+        <label>Phone / WhatsApp<input id="bookingPhone" type="tel" required></label>
       </div>
 
       <div class="two-col">
-        <label>Email<input type="email" required></label>
-        <label>Instagram <small>(optional)</small><input type="text" placeholder="@username"></label>
+        <label>Email<input id="bookingEmail" type="email" required></label>
+        <label>Instagram <small>(optional)</small><input id="bookingInstagram" type="text" placeholder="@username"></label>
       </div>
 
-      <label>Notes<textarea rows="4" placeholder="Anything else Spaceboi should know?"></textarea></label>
+      <label>Notes<textarea id="bookingNotes" rows="4" placeholder="Anything else Spaceboi should know?"></textarea></label>
 
       <label class="check-line"><input type="checkbox" id="portfolioPermission"><span>You may use photos from this shoot for your portfolio/social media.</span></label>
-      <label class="check-line hidden" id="tagPermissionWrap"><input type="checkbox"><span>You may tag me on Instagram.</span></label>
+      <label class="check-line hidden" id="tagPermissionWrap"><input type="checkbox" id="tagPermission"><span>You may tag me on Instagram.</span></label>
 
       <div class="request-note">
         This sends a request only. The photographer confirms the time before payment.
       </div>
 
-      <button class="gold-btn full-width" type="submit">SEND BOOKING REQUEST</button>
+      <p class="booking-submit-status" id="bookingSubmitStatus" aria-live="polite"></p>
+      <button class="gold-btn full-width" id="bookingSubmitButton" type="submit">SEND BOOKING REQUEST</button>
     </form>
   </section>
 </main>
@@ -122,6 +130,7 @@
   </div>
 </footer>
 
-<script src="spaceboi-v3.js?v=brand3"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="spaceboi-v5.js?v=client-bookings"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#2d1536">
   <title>My Bookings | Shot by Spaceboi</title>
   <meta name="description" content="Shot by Spaceboi photography">
-  <link rel="stylesheet" href="spaceboi-v3.css?v=brand3">
+  <link rel="stylesheet" href="spaceboi-v5.css?v=client-bookings">
 </head>
 <body class="">
 
@@ -125,10 +125,21 @@
           <button class="soft-account-btn full-width" type="button" id="signOutButton">SIGN OUT</button>
         </div>
 
-        <div class="account-coming">
-          <strong>My Bookings</strong>
-          <p>Your live bookings, invoices, payment proof and photo links are the next connection.</p>
-        </div>
+        <section class="my-bookings-section">
+          <div class="my-bookings-head">
+            <div>
+              <p class="eyebrow">CLIENT AREA</p>
+              <h3>My Bookings</h3>
+            </div>
+            <a class="mini-book-link" href="shoots.html">NEW SHOOT +</a>
+          </div>
+
+          <div class="booking-list-state" id="bookingsLoading">Loading your bookings…</div>
+          <div class="booking-list-state hidden" id="bookingsEmpty">
+            You don’t have any bookings yet.
+          </div>
+          <div class="my-bookings-list" id="bookingsList"></div>
+        </section>
       </div>
 
     </div>
@@ -157,6 +168,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="spaceboi-v4.js?v=auth-final"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="spaceboi-v5.js?v=client-bookings"></script>
 </body>
 </html>
