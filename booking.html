@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2d1536">
+  <title>Booking Request | Shot by Spaceboi</title>
+  <meta name="description" content="Shot by Spaceboi photography">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="">
+
+<header class="topbar" id="topbar">
+  <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <a class="brand" href="index.html" aria-label="Shot by Spaceboi home">
+    <span class="brand-small">SHOT BY</span>
+    <span class="brand-main">Spaceboi</span>
+  </a>
+
+  <a class="client-icon" href="login.html" aria-label="Client Login / My Bookings" title="Client Login / My Bookings">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="18" cy="13" r="6"></circle>
+      <path d="M8 31c1.4-6.1 5-9.2 10-9.2S26.6 24.9 28 31"></path>
+    </svg>
+    <span class="client-sparkle">✦</span>
+  </a>
+</header>
+
+<div class="menu-backdrop" id="menuBackdrop"></div>
+
+<aside class="side-menu" id="sideMenu" aria-hidden="true">
+  <div class="menu-head">
+    <a class="menu-logo" href="index.html">
+      <span class="brand-small">SHOT BY</span>
+      <span class="brand-main">Spaceboi</span>
+    </a>
+    <button class="close-menu" id="closeMenu" aria-label="Close menu">×</button>
+  </div>
+
+  <nav class="menu-links">
+    <a href="index.html">Home</a>
+    <a href="shoots.html">Shoot Options</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">My Bookings / Login</a>
+    <a href="shoots.html" class="menu-book">Book Now</a>
+  </nav>
+</aside>
+
+
+<main class="page-main">
+  <section class="page-hero plum compact-hero">
+    <p class="eyebrow light">BOOKING REQUEST</p>
+    <h1 id="bookingShootTitle">Your <em>shoot.</em></h1>
+    <p id="bookingPackageText">Your selected shoot and package will appear here.</p>
+  </section>
+
+  <section class="section ivory">
+    <form class="booking-form" id="bookingForm">
+      <div class="two-col">
+        <label>Preferred date<input type="date" required></label>
+        <label>Preferred time<input type="time" required></label>
+      </div>
+
+      <div class="choice-row">
+        <label class="choice-pill"><input type="radio" name="locationType" value="Studio" checked><span>Studio</span></label>
+        <label class="choice-pill"><input type="radio" name="locationType" value="On Location"><span>On Location</span></label>
+      </div>
+
+      <label id="locationWrap" class="hidden">Address / venue / area<input type="text" id="locationInput"></label>
+
+      <label>Inspiration photos <small>(optional, up to 4)</small><input type="file" id="inspoPhotos" accept="image/*" multiple></label>
+
+      <div class="two-col">
+        <label>Full name<input type="text" required></label>
+        <label>Phone / WhatsApp<input type="tel" required></label>
+      </div>
+
+      <div class="two-col">
+        <label>Email<input type="email" required></label>
+        <label>Instagram <small>(optional)</small><input type="text" placeholder="@username"></label>
+      </div>
+
+      <label>Notes<textarea rows="4" placeholder="Anything else Spaceboi should know?"></textarea></label>
+
+      <label class="check-line"><input type="checkbox" id="portfolioPermission"><span>You may use photos from this shoot for your portfolio/social media.</span></label>
+      <label class="check-line hidden" id="tagPermissionWrap"><input type="checkbox"><span>You may tag me on Instagram.</span></label>
+
+      <div class="request-note">
+        This sends a request only. The photographer confirms the time before payment.
+      </div>
+
+      <button class="gold-btn full-width" type="submit">SEND BOOKING REQUEST</button>
+    </form>
+  </section>
+</main>
+
+
+<footer class="footer">
+  <div class="footer-brand">
+    <span class="brand-small">SHOT BY</span>
+    <span class="brand-main">Spaceboi</span>
+  </div>
+
+  <div class="footer-links">
+    <a href="shoots.html">Shoot Options</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">My Bookings</a>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Instagram • TikTok • WhatsApp • Email</span>
+    <span>© <span id="year"></span> Shot by Spaceboi</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
