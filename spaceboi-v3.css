@@ -789,3 +789,49 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
     padding:38px 36px;
   }
 }
+
+
+/* ===== Login typography refinement ===== */
+.auth-form label{
+  display:block;
+  margin-bottom:18px;
+  color:var(--plum);
+  font-size:13px;
+  line-height:1.25;
+  letter-spacing:.35px;
+  font-weight:600;
+  text-transform:none;
+}
+
+.auth-form input{
+  min-height:54px;
+  margin-top:8px;
+  padding:0 15px;
+  border:1px solid rgba(45,21,54,.16);
+  border-radius:12px;
+  background:#fffdf9;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  letter-spacing:0;
+  font-weight:400;
+}
+
+.auth-form input::placeholder{
+  color:#9b9299;
+  font-size:14px;
+  opacity:1;
+}
+
+.auth-form input:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(197,154,67,.10);
+  outline:none;
+}
+
+.auth-form .gold-btn{
+  min-height:52px;
+  border-radius:999px;
+  font-size:10px;
+  letter-spacing:1.5px;
+}
