@@ -835,3 +835,117 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
   font-size:10px;
   letter-spacing:1.5px;
 }
+
+
+/* ===== Shot by Spaceboi real branding ===== */
+.site-logo{
+  display:block;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 10px rgba(15,6,18,.16));
+}
+
+.brand{
+  width:126px;
+  height:56px;
+  justify-self:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.header-logo{
+  width:124px;
+  max-height:54px;
+}
+
+.menu-logo{
+  width:176px;
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.menu-logo-image{
+  width:174px;
+  max-height:74px;
+}
+
+.footer-brand{
+  width:190px;
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.footer-logo-image{
+  width:188px;
+  max-height:82px;
+}
+
+.footer-contact-line{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.footer-contact-line a{
+  color:rgba(255,255,255,.72);
+}
+
+.footer-contact-line b{
+  color:var(--gold2);
+  font-weight:400;
+}
+
+.contact-card strong{
+  overflow-wrap:anywhere;
+}
+
+.contact-card strong a{
+  color:inherit;
+}
+
+@media(max-width:430px){
+  .brand{
+    width:108px;
+  }
+
+  .header-logo{
+    width:106px;
+  }
+
+  .client-icon{
+    min-width:86px;
+  }
+
+  .client-label{
+    font-size:6.5px;
+    letter-spacing:.9px;
+  }
+}
+
+@media(min-width:760px){
+  .brand{
+    width:150px;
+  }
+
+  .header-logo{
+    width:146px;
+    max-height:62px;
+  }
+
+  .menu-logo,
+  .menu-logo-image{
+    width:205px;
+  }
+
+  .footer-brand,
+  .footer-logo-image{
+    width:220px;
+  }
+}

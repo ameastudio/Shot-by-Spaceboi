@@ -271,7 +271,7 @@ if(bookingShootTitle){
 
 // ===== Shot by Spaceboi Supabase client auth =====
 const SPACEBOI_SUPABASE_URL = "https://soqpxkdbsddatrouudke.supabase.co";
-const SPACEBOI_SUPABASE_KEY = "sb_publishable_O4w_43CQJJXL5sedjwUdeA_J6WbOmO3";
+const SPACEBOI_SUPABASE_KEY = "sb_publishable_04w_43CQJJXL5sedjwUdeA_J6Wb0m03";
 
 const sbClient =
   window.supabase?.createClient
