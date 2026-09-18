@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#2d1536">
   <title>My Bookings | Shot by Spaceboi</title>
   <meta name="description" content="Shot by Spaceboi photography">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="spaceboi-v3.css">
 </head>
 <body class="">
 
@@ -67,15 +67,13 @@
     <div class="auth-shell">
 
       <div class="login-card auth-card" id="authCard">
-        <div class="auth-tabs" role="tablist" aria-label="Account">
-          <button class="auth-tab active" id="showSignIn" type="button">SIGN IN</button>
-          <button class="auth-tab" id="showSignUp" type="button">CREATE ACCOUNT</button>
+        <div class="auth-heading">
+          <p class="eyebrow">MY ACCOUNT</p>
+          <h2 id="authTitle">Welcome Back</h2>
+          <p class="auth-intro" id="authIntro">Sign in to manage your bookings, invoices and photo links.</p>
         </div>
 
         <form id="signInForm" class="auth-form">
-          <h2>Welcome Back</h2>
-          <p class="auth-intro">Sign in to view your bookings, invoices and photo links.</p>
-
           <label>
             Email
             <input id="signInEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
@@ -87,12 +85,13 @@
           </label>
 
           <button class="gold-btn full-width" type="submit">SIGN IN</button>
+
+          <button class="auth-switch" id="showSignUp" type="button">
+            New to Shot by Spaceboi? <strong>Create an account</strong>
+          </button>
         </form>
 
         <form id="signUpForm" class="auth-form hidden">
-          <h2>Create Account</h2>
-          <p class="auth-intro">Create your account before requesting a shoot.</p>
-
           <label>
             Full name
             <input id="signUpName" type="text" autocomplete="name" placeholder="Your name" required>
@@ -109,6 +108,10 @@
           </label>
 
           <button class="gold-btn full-width" type="submit">CREATE ACCOUNT</button>
+
+          <button class="auth-switch" id="showSignIn" type="button">
+            Already have an account? <strong>Sign in</strong>
+          </button>
         </form>
 
         <p class="auth-message" id="authMessage" aria-live="polite"></p>
@@ -157,6 +160,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
+<script src="spaceboi-v3.js"></script>
 </body>
 </html>
