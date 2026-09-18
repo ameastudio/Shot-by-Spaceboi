@@ -511,3 +511,95 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
     transition:.45s ease;
   }
 }
+
+
+/* ===== Final UI refinements ===== */
+
+/* Header: single profile icon + MY ACCOUNT */
+.topbar{
+  grid-template-columns:44px 1fr auto;
+}
+
+.client-icon{
+  width:auto;
+  min-width:92px;
+  height:42px;
+  gap:5px;
+  justify-content:flex-end;
+  padding-left:4px;
+}
+
+.client-icon-mark{
+  position:relative;
+  width:31px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+
+.client-icon-mark svg{
+  width:31px;
+  height:31px;
+  fill:none;
+  stroke:var(--gold2);
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.client-icon-mark .client-sparkle{
+  top:1px;
+  right:-1px;
+}
+
+.client-label{
+  color:var(--gold2);
+  font-size:7px;
+  line-height:1;
+  letter-spacing:1.05px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+/* Homepage portfolio: 4 equal images, clean 2x2 collage */
+.preview-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.preview-grid img,
+.preview-grid img:first-child{
+  width:100%;
+  height:auto;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  grid-row:auto;
+  border-radius:10px;
+}
+
+@media(min-width:760px){
+  .client-icon{
+    min-width:110px;
+    gap:7px;
+  }
+
+  .client-label{
+    font-size:8px;
+    letter-spacing:1.25px;
+  }
+
+  .preview-grid{
+    max-width:980px;
+    margin:0 auto;
+    gap:10px;
+  }
+
+  .preview-grid img,
+  .preview-grid img:first-child{
+    aspect-ratio:4 / 3;
+    grid-row:auto;
+  }
+}
