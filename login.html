@@ -64,12 +64,72 @@
   </section>
 
   <section class="section champagne">
-    <div class="login-card">
-      <h2>Client Login</h2>
-      <label>Email<input type="email" placeholder="you@example.com"></label>
-      <label>Password<input type="password" placeholder="••••••••"></label>
-      <button class="gold-btn full-width" type="button" id="demoLogin">SIGN IN</button>
-      <p class="small-note">Login becomes live when Supabase is connected.</p>
+    <div class="auth-shell">
+
+      <div class="login-card auth-card" id="authCard">
+        <div class="auth-tabs" role="tablist" aria-label="Account">
+          <button class="auth-tab active" id="showSignIn" type="button">SIGN IN</button>
+          <button class="auth-tab" id="showSignUp" type="button">CREATE ACCOUNT</button>
+        </div>
+
+        <form id="signInForm" class="auth-form">
+          <h2>Welcome Back</h2>
+          <p class="auth-intro">Sign in to view your bookings, invoices and photo links.</p>
+
+          <label>
+            Email
+            <input id="signInEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Password
+            <input id="signInPassword" type="password" autocomplete="current-password" placeholder="••••••••" required>
+          </label>
+
+          <button class="gold-btn full-width" type="submit">SIGN IN</button>
+        </form>
+
+        <form id="signUpForm" class="auth-form hidden">
+          <h2>Create Account</h2>
+          <p class="auth-intro">Create your account before requesting a shoot.</p>
+
+          <label>
+            Full name
+            <input id="signUpName" type="text" autocomplete="name" placeholder="Your name" required>
+          </label>
+
+          <label>
+            Email
+            <input id="signUpEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            Password
+            <input id="signUpPassword" type="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters" required>
+          </label>
+
+          <button class="gold-btn full-width" type="submit">CREATE ACCOUNT</button>
+        </form>
+
+        <p class="auth-message" id="authMessage" aria-live="polite"></p>
+      </div>
+
+      <div class="login-card account-card hidden" id="accountCard">
+        <p class="eyebrow">MY ACCOUNT</p>
+        <h2>Welcome, <span id="accountName">Client</span></h2>
+        <p class="auth-intro" id="accountEmail"></p>
+
+        <div class="account-actions">
+          <a class="gold-btn full-width" href="shoots.html">BOOK A SHOOT</a>
+          <button class="soft-account-btn full-width" type="button" id="signOutButton">SIGN OUT</button>
+        </div>
+
+        <div class="account-coming">
+          <strong>My Bookings</strong>
+          <p>Your live bookings, invoices, payment proof and photo links are the next connection.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
@@ -96,6 +156,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -603,3 +603,107 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
     grid-row:auto;
   }
 }
+
+
+/* ===== Supabase client account auth ===== */
+.auth-shell{
+  width:min(100%,620px);
+  margin:0 auto;
+}
+
+.auth-card,
+.account-card{
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.auth-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  margin:-4px -4px 24px;
+  border:1px solid rgba(45,21,54,.14);
+}
+
+.auth-tab{
+  min-height:44px;
+  border:0;
+  background:transparent;
+  color:var(--plum);
+  cursor:pointer;
+  font-size:9px;
+  letter-spacing:1.3px;
+  font-weight:700;
+}
+
+.auth-tab.active{
+  background:var(--plum);
+  color:var(--champagne);
+}
+
+.auth-form h2,
+.account-card h2{
+  margin-bottom:8px;
+}
+
+.auth-intro{
+  margin:0 0 22px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+.auth-message{
+  min-height:18px;
+  margin:14px 0 0;
+  color:var(--plum);
+  font-size:11px;
+  line-height:1.5;
+  text-align:center;
+}
+
+.auth-message.error{
+  color:#8b2436;
+}
+
+.auth-message.success{
+  color:#436342;
+}
+
+.account-actions{
+  display:grid;
+  gap:10px;
+  margin-top:22px;
+}
+
+.soft-account-btn{
+  min-height:46px;
+  border:1px solid rgba(45,21,54,.22);
+  background:transparent;
+  color:var(--plum);
+  cursor:pointer;
+  letter-spacing:1.4px;
+  font-size:9px;
+  font-weight:700;
+}
+
+.account-coming{
+  margin-top:22px;
+  padding:16px;
+  background:var(--champagne-2);
+  border-left:2px solid var(--gold);
+}
+
+.account-coming strong{
+  color:var(--plum);
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:500;
+}
+
+.account-coming p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.55;
+}

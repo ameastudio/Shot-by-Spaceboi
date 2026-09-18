@@ -267,6 +267,144 @@ if(bookingShootTitle){
   });
 }
 
-document.getElementById("demoLogin")?.addEventListener("click",()=>{
-  alert("Client login becomes live when Supabase is connected.");
+
+
+// ===== Shot by Spaceboi Supabase client auth =====
+const SPACEBOI_SUPABASE_URL = "https://soqpxkdbsddatrouudke.supabase.co";
+const SPACEBOI_SUPABASE_KEY = "sb_publishable_04w_43CQJJXL5sedjWUdeA_J6Wb0m03";
+
+const sbClient =
+  window.supabase?.createClient
+    ? window.supabase.createClient(SPACEBOI_SUPABASE_URL, SPACEBOI_SUPABASE_KEY)
+    : null;
+
+const signInForm = document.getElementById("signInForm");
+const signUpForm = document.getElementById("signUpForm");
+const showSignIn = document.getElementById("showSignIn");
+const showSignUp = document.getElementById("showSignUp");
+const authMessage = document.getElementById("authMessage");
+const authCard = document.getElementById("authCard");
+const accountCard = document.getElementById("accountCard");
+const accountName = document.getElementById("accountName");
+const accountEmail = document.getElementById("accountEmail");
+const signOutButton = document.getElementById("signOutButton");
+
+function setAuthMessage(message = "", type = "") {
+  if (!authMessage) return;
+  authMessage.textContent = message;
+  authMessage.classList.remove("error", "success");
+  if (type) authMessage.classList.add(type);
+}
+
+function setAuthTab(mode) {
+  const signingIn = mode === "signin";
+  signInForm?.classList.toggle("hidden", !signingIn);
+  signUpForm?.classList.toggle("hidden", signingIn);
+  showSignIn?.classList.toggle("active", signingIn);
+  showSignUp?.classList.toggle("active", !signingIn);
+  setAuthMessage("");
+}
+
+showSignIn?.addEventListener("click", () => setAuthTab("signin"));
+showSignUp?.addEventListener("click", () => setAuthTab("signup"));
+
+async function showAccount(user) {
+  if (!user || !sbClient || !authCard || !accountCard) return;
+
+  let fullName = user.user_metadata?.full_name || "Client";
+
+  const { data: profile } = await sbClient
+    .from("profiles")
+    .select("full_name")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (profile?.full_name) fullName = profile.full_name;
+
+  accountName.textContent = fullName;
+  accountEmail.textContent = user.email || "";
+  authCard.classList.add("hidden");
+  accountCard.classList.remove("hidden");
+}
+
+function showAuthForms() {
+  authCard?.classList.remove("hidden");
+  accountCard?.classList.add("hidden");
+  setAuthTab("signin");
+}
+
+signInForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!sbClient) return setAuthMessage("Account connection did not load. Please refresh.", "error");
+
+  const email = document.getElementById("signInEmail").value.trim();
+  const password = document.getElementById("signInPassword").value;
+
+  setAuthMessage("Signing in…");
+
+  const { data, error } = await sbClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    setAuthMessage(error.message, "error");
+    return;
+  }
+
+  setAuthMessage("");
+  await showAccount(data.user);
 });
+
+signUpForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!sbClient) return setAuthMessage("Account connection did not load. Please refresh.", "error");
+
+  const fullName = document.getElementById("signUpName").value.trim();
+  const email = document.getElementById("signUpEmail").value.trim();
+  const password = document.getElementById("signUpPassword").value;
+
+  setAuthMessage("Creating account…");
+
+  const { data, error } = await sbClient.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { full_name: fullName },
+      emailRedirectTo: "https://ameastudio.github.io/Shot-by-Spaceboi/login.html"
+    }
+  });
+
+  if (error) {
+    setAuthMessage(error.message, "error");
+    return;
+  }
+
+  if (data.session && data.user) {
+    await showAccount(data.user);
+    return;
+  }
+
+  setAuthMessage("Account created. Check your email to confirm it, then sign in.", "success");
+  setAuthTab("signin");
+});
+
+signOutButton?.addEventListener("click", async () => {
+  if (!sbClient) return;
+  await sbClient.auth.signOut();
+  showAuthForms();
+  setAuthMessage("Signed out.", "success");
+});
+
+if (sbClient && authCard && accountCard) {
+  sbClient.auth.getSession().then(async ({ data }) => {
+    const user = data.session?.user;
+    if (user) await showAccount(user);
+    else showAuthForms();
+  });
+
+  sbClient.auth.onAuthStateChange(async (_event, session) => {
+    if (session?.user) await showAccount(session.user);
+    else showAuthForms();
+  });
+}
