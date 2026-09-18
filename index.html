@@ -77,33 +77,33 @@
       </div>
 
       <div class="service-grid">
-        <article class="service-card">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=85" alt="Portrait photography placeholder" />
+        <article class="service-card clickable-card" data-shoot-id="birthday" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1000&q=85" alt="Birthday photography placeholder" />
           <div class="service-overlay">
             <span>01</span>
-            <h3>Portrait Sessions</h3>
-            <p>Personal, birthday, graduation and creative portraits.</p>
-            <a href="#booking">VIEW / BOOK →</a>
+            <h3>Birthday Shoot</h3>
+            <p>Polished birthday portraits, glam looks and celebration content.</p>
+            <button class="service-link" type="button">VIEW / BOOK →</button>
           </div>
         </article>
 
-        <article class="service-card">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85" alt="Event photography placeholder" />
+        <article class="service-card clickable-card" data-shoot-id="lifestyle" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=85" alt="Lifestyle photography placeholder" />
           <div class="service-overlay">
             <span>02</span>
-            <h3>Events</h3>
-            <p>Celebrations, weddings, launches and special moments.</p>
-            <a href="#booking">VIEW / BOOK →</a>
+            <h3>Lifestyle Shoot</h3>
+            <p>Natural, relaxed images with a clean editorial feel.</p>
+            <button class="service-link" type="button">VIEW / BOOK →</button>
           </div>
         </article>
 
-        <article class="service-card">
-          <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=85" alt="Maternity photography placeholder" />
+        <article class="service-card clickable-card" data-shoot-id="graduation" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=85" alt="Graduation photography placeholder" />
           <div class="service-overlay">
             <span>03</span>
-            <h3>Signature Shoots</h3>
-            <p>Maternity, brand, studio and concept-driven sessions.</p>
-            <a href="#booking">VIEW / BOOK →</a>
+            <h3>Graduation Shoot</h3>
+            <p>Celebrate the milestone with portraits that feel elevated and personal.</p>
+            <button class="service-link" type="button">VIEW / BOOK →</button>
           </div>
         </article>
       </div>
@@ -196,149 +196,21 @@
       </div>
     </section>
 
-    <!-- BOOKING -->
-    <section class="booking-section" id="booking">
-      <div class="booking-intro">
-        <p class="kicker light">BOOK YOUR SHOOT</p>
-        <h2>Build your session.</h2>
-        <p>
-          Choose what you want, send your preferred time, and the photographer confirms availability before payment.
-        </p>
-
-        <div class="booking-flow">
-          <span>01 Request</span>
-          <span>02 Confirm</span>
-          <span>03 Pay Deposit</span>
-          <span>04 Booked</span>
+    <!-- SHOOT MENU -->
+    <section class="section shoot-menu-section" id="booking">
+      <div class="section-head shoot-menu-heading">
+        <div>
+          <p class="kicker">CHOOSE YOUR EXPERIENCE</p>
+          <h2>Shoot Menu</h2>
         </div>
+        <p class="section-note">Choose a shoot to see its three-photo gallery, package options and booking details.</p>
       </div>
 
-      <form class="booking-form" id="bookingForm">
-        <div class="field-row">
-          <label>
-            Shoot type
-            <select id="shootType" required>
-              <option value="">Choose one</option>
-              <option>Portrait / Birthday</option>
-              <option>Graduation</option>
-              <option>Maternity</option>
-              <option>Wedding / Event</option>
-              <option>Brand / Product</option>
-              <option>Studio Creative</option>
-              <option>Other</option>
-            </select>
-          </label>
+      <div class="shoot-menu-grid" id="shootMenuGrid"></div>
 
-          <label>
-            Duration
-            <select required>
-              <option value="">Choose</option>
-              <option>30 minutes</option>
-              <option>1 hour</option>
-              <option>2 hours</option>
-              <option>3+ hours</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="field-row">
-          <label>
-            Photos received
-            <input type="number" min="1" placeholder="e.g. 20" required />
-          </label>
-
-          <label>
-            Edited photos
-            <input type="number" min="1" placeholder="e.g. 8" required />
-          </label>
-        </div>
-
-        <div class="field-row">
-          <label>
-            Preferred date
-            <input type="date" id="preferredDate" required />
-          </label>
-
-          <label>
-            Preferred time
-            <input type="time" id="preferredTime" required />
-          </label>
-        </div>
-
-        <div class="location-choice">
-          <p class="field-title">Location</p>
-          <div class="choice-row">
-            <label class="choice-pill">
-              <input type="radio" name="locationType" value="Studio" checked />
-              <span>Studio</span>
-            </label>
-            <label class="choice-pill">
-              <input type="radio" name="locationType" value="On Location" />
-              <span>On Location</span>
-            </label>
-          </div>
-        </div>
-
-        <label class="full-field hidden" id="locationAddressWrap">
-          On-location address / venue / area
-          <input type="text" id="locationAddress" placeholder="Enter location" />
-        </label>
-
-        <label class="full-field">
-          Inspiration photos <span class="optional">(optional, up to 4)</span>
-          <input type="file" id="inspoPhotos" accept="image/*" multiple />
-          <small id="fileNote">Style, pose, outfit, location or mood.</small>
-        </label>
-
-        <div class="field-row">
-          <label>
-            Full name
-            <input type="text" required />
-          </label>
-
-          <label>
-            Phone / WhatsApp
-            <input type="tel" required />
-          </label>
-        </div>
-
-        <div class="field-row">
-          <label>
-            Email
-            <input type="email" required />
-          </label>
-
-          <label>
-            Instagram <span class="optional">(optional)</span>
-            <input type="text" placeholder="@username" />
-          </label>
-        </div>
-
-        <label class="full-field">
-          Notes
-          <textarea rows="4" placeholder="Anything else Spaceboi should know?"></textarea>
-        </label>
-
-        <div class="permission-box">
-          <label class="check-line">
-            <input type="checkbox" id="portfolioPermission" />
-            <span>You may use photos from this shoot for your portfolio/social media.</span>
-          </label>
-
-          <label class="check-line hidden" id="tagPermissionWrap">
-            <input type="checkbox" />
-            <span>You may tag me on Instagram.</span>
-          </label>
-        </div>
-
-        <div class="booking-note">
-          <strong>Important:</strong> this sends a booking request, not an instant confirmed appointment.
-          Confirmed times will be blocked from other clients once the live database is connected.
-        </div>
-
-        <button class="gold-button full-button" type="submit">SEND BOOKING REQUEST</button>
-        <p class="backend-note">Frontend preview only — database, account login, payments and WhatsApp automation are connected in the next build stage.</p>
-      </form>
+      <div class="menu-admin-note">
+        Shoot types, example photos, packages, pricing and add-ons are structured to be managed from the photographer's admin app once the backend is connected.
+      </div>
     </section>
 
     <!-- CLIENT AREA PREVIEW -->
@@ -381,6 +253,170 @@
       <a href="#booking" class="outline-button">BOOK NOW <span>→</span></a>
     </section>
   </main>
+
+  <!-- SHOOT PRODUCT PAGE -->
+  <section class="shoot-view" id="shootView" aria-hidden="true">
+    <div class="shoot-view-header">
+      <button class="shoot-back" id="shootBackButton" type="button" aria-label="Close shoot details">← BACK</button>
+      <div class="shoot-view-brand">
+        <span class="brand-small">SHOT BY</span>
+        <span class="brand-main">Spaceboi</span>
+      </div>
+      <button class="shoot-close" id="shootCloseButton" type="button" aria-label="Close shoot details">×</button>
+    </div>
+
+    <div class="shoot-product-layout">
+      <div class="shoot-gallery-wrap">
+        <div class="shoot-gallery" id="shootGallery"></div>
+        <div class="gallery-controls">
+          <button type="button" id="galleryPrev" aria-label="Previous photo">←</button>
+          <div class="gallery-dots" id="galleryDots"></div>
+          <button type="button" id="galleryNext" aria-label="Next photo">→</button>
+        </div>
+      </div>
+
+      <div class="shoot-product-info">
+        <p class="kicker" id="shootCategory">PHOTOGRAPHY SESSION</p>
+        <h2 id="shootTitle">Shoot</h2>
+        <p class="shoot-description" id="shootDescription"></p>
+
+        <div class="product-divider"></div>
+
+        <div class="product-option-section">
+          <div class="option-heading-row">
+            <h3>Choose your package</h3>
+            <span>Required</span>
+          </div>
+          <div class="package-options" id="packageOptions"></div>
+        </div>
+
+        <div class="selected-package-summary" id="selectedPackageSummary">
+          Select a package to continue.
+        </div>
+
+        <form class="shoot-booking-form" id="shootBookingForm">
+          <div class="custom-request hidden" id="customRequestWrap">
+            <label>
+              What kind of shoot do you have in mind?
+              <textarea id="customRequestText" rows="4" placeholder="Tell us the concept, occasion or look you want..."></textarea>
+            </label>
+          </div>
+
+          <div class="product-option-section">
+            <div class="option-heading-row">
+              <h3>Add-ons</h3>
+              <span>Optional</span>
+            </div>
+            <div class="addon-options" id="addonOptions"></div>
+          </div>
+
+          <div class="product-option-section">
+            <div class="option-heading-row">
+              <h3>Preferred date & time</h3>
+              <span>Request only</span>
+            </div>
+            <div class="field-row">
+              <label>
+                Date
+                <input type="date" id="shootDate" required />
+              </label>
+              <label>
+                Time
+                <input type="time" id="shootTime" required />
+              </label>
+            </div>
+            <p class="micro-note">Confirmed times will be blocked from other clients once the live booking database is connected.</p>
+          </div>
+
+          <div class="product-option-section">
+            <div class="option-heading-row">
+              <h3>Location</h3>
+              <span>Choose one</span>
+            </div>
+            <div class="choice-row product-location-row">
+              <label class="choice-pill">
+                <input type="radio" name="productLocationType" value="Studio" checked />
+                <span>Studio</span>
+              </label>
+              <label class="choice-pill">
+                <input type="radio" name="productLocationType" value="On Location" />
+                <span>On Location</span>
+              </label>
+            </div>
+            <label class="full-field hidden" id="productLocationAddressWrap">
+              Address / venue / area
+              <input type="text" id="productLocationAddress" placeholder="Enter location" />
+              <small>Any travel/location fee is reviewed and confirmed by the photographer.</small>
+            </label>
+          </div>
+
+          <div class="product-option-section">
+            <div class="option-heading-row">
+              <h3>Inspiration</h3>
+              <span>Up to 4 photos</span>
+            </div>
+            <label class="full-field product-upload">
+              Upload inspiration photos <span class="optional">(optional)</span>
+              <input type="file" id="productInspoPhotos" accept="image/*" multiple />
+              <small id="productFileNote">Style, pose, outfit, location or mood.</small>
+            </label>
+          </div>
+
+          <div class="product-option-section client-details-block">
+            <div class="option-heading-row">
+              <h3>Your details</h3>
+              <span>Client account later</span>
+            </div>
+            <div class="field-row">
+              <label>
+                Full name
+                <input type="text" id="clientName" required />
+              </label>
+              <label>
+                Phone / WhatsApp
+                <input type="tel" id="clientPhone" required />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Email
+                <input type="email" id="clientEmail" required />
+              </label>
+              <label>
+                Instagram <span class="optional">(optional)</span>
+                <input type="text" id="clientInstagram" placeholder="@username" />
+              </label>
+            </div>
+          </div>
+
+          <div class="permission-box product-permission-box">
+            <label class="check-line">
+              <input type="checkbox" id="productPortfolioPermission" />
+              <span>You may use photos from this shoot for your portfolio/social media.</span>
+            </label>
+            <label class="check-line hidden" id="productTagPermissionWrap">
+              <input type="checkbox" id="productTagPermission" />
+              <span>You may tag me on Instagram.</span>
+            </label>
+          </div>
+
+          <div class="booking-note product-booking-note">
+            <strong>Booking request:</strong> sending this does not instantly confirm the time. The photographer reviews availability first, then payment instructions appear after confirmation.
+          </div>
+
+          <div class="product-total-bar">
+            <div>
+              <span>Selected total</span>
+              <strong id="productTotal">—</strong>
+            </div>
+            <button class="gold-button" type="submit">REQUEST THIS SHOOT</button>
+          </div>
+
+          <p class="backend-note">This is the working frontend. Live accounts, saved bookings, payment proof, blocked slots and admin editing will connect to the database next.</p>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- PORTFOLIO DRAWER -->
   <section class="full-view" id="portfolioView" aria-hidden="true">
