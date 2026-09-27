@@ -1490,3 +1490,33 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:500}
 /* Keep portfolio preview as an even 2x2 collage. */
 .preview-grid img:first-child{grid-row:auto;height:auto}
 .preview-grid img{aspect-ratio:1/1.15;height:auto;object-fit:cover;border-radius:6px}
+
+
+/* ===== One-stage dynamic public loading ===== */
+body.dynamic-loading .home-hero,
+body.dynamic-loading #popularShoots,
+body.dynamic-loading .preview-grid,
+body.dynamic-loading .about-home,
+body.dynamic-loading #shootCatalog,
+body.dynamic-loading #galleryTrack,
+body.dynamic-loading .portfolio-full,
+body.dynamic-loading .about-full,
+body.dynamic-loading .reviews {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.dynamic-ready .home-hero,
+body.dynamic-ready #popularShoots,
+body.dynamic-ready .preview-grid,
+body.dynamic-ready .about-home,
+body.dynamic-ready #shootCatalog,
+body.dynamic-ready #galleryTrack,
+body.dynamic-ready .portfolio-full,
+body.dynamic-ready .about-full,
+body.dynamic-ready .reviews {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .18s ease;
+}
