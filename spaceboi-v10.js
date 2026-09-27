@@ -1839,8 +1839,16 @@ function updateContactEverywhere(contact = {}) {
   }
 }
 
+function revealDynamicPublicSite() {
+  document.body?.classList.remove("dynamic-loading");
+  document.body?.classList.add("dynamic-ready");
+}
+
 async function loadDynamicPublicSite() {
-  if (!sbClient) return;
+  if (!sbClient) {
+    revealDynamicPublicSite();
+    return;
+  }
 
   try {
     const [
@@ -1943,6 +1951,8 @@ async function loadDynamicPublicSite() {
     }
   } catch (error) {
     console.warn("Dynamic website content skipped:", error);
+  } finally {
+    revealDynamicPublicSite();
   }
 }
 
